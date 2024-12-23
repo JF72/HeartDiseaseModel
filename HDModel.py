@@ -14,8 +14,8 @@ from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score
 
 #Reading
-testing_data = pd.read_csv("https://drive.google.com/uc?export=download&id=1sBu7XLI7mtBJSjxSiJTuUAkOeRzsEViF")
-training_data = pd.read_csv("https://drive.google.com/uc?export=download&id=1sAqxpGKmo7koA5L0Ohn4Mko6RUbDGSnU")
+testing_data = pd.read_csv("https://drive.google.com/uc?export=download&id=1Oph-i2XpobrmW0P0dx_KTelqKnk2SbUm")
+training_data = pd.read_csv("https://drive.google.com/uc?export=download&id=1PLywMAnnvM7ACw9IiE-HrTamWLDy2Uf1")
 
 correlation_matrix = training_data.corr()
 
@@ -24,7 +24,7 @@ sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
 plt.title('Correlation Heatmap')
 plt.show()
 
-X_col = ['exercise angina', 'ST slope', 'oldpeak', 'fasting blood sugar', 'chest pain type', 'resting ecg', 'cholesterol', 'sex']
+X_col = ['exang', 'slope', 'oldpeak', 'fbs', 'cp', 'restecg', 'chol', 'sex']
 
 X = training_data[X_col] #Features we testing
 Y = training_data["target"] #Class heart disease or not
